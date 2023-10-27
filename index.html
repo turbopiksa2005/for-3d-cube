@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D LED Cube</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="cube">
+        <div class="side front">front</div>
+        <div class="side back">back</div>
+        <div class="side right">right</div>
+        <div class="side left">left</div>
+        <div class="side top">top</div>
+        <div class="side bottom">bottom</div>
+      </div>
+    </div>
+    <script>
+    
+          (function () {
+            var rotateY = 0,
+                rotateX = 0;
+          
+            document.onkeydown = function (e) {
+                  if (e.keyCode === 37) rotateY -= 4
+              else if (e.keyCode === 38) rotateX += 4
+              else if (e.keyCode === 39) rotateY += 4
+              else if (e.keyCode === 40) rotateX -= 4
+          
+              document.querySelector('.cube').style.transform = 
+                'rotateY(' + rotateY + 'deg)'+
+                'rotateX(' + rotateX + 'deg)';
+              }
+          })();
+          </script>
+  </body>
+</html>
